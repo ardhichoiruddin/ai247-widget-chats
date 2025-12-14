@@ -1,9 +1,10 @@
 <script lang="ts">
   import { cn } from "$lib/utils";
+  import ChatBubbleImage from "./chatBubbleImage.svelte";
   import { chatBubbleVariants } from "./tv";
   import type { ChatBubble } from "./types";
 
-  let { id, name, role, content, images, date }: ChatBubble = $props();
+  let { id, name, role, content, images, date, profile }: ChatBubble = $props();
 </script>
 
 <div class="w-full">
@@ -15,9 +16,13 @@
     {#if role === "bot"}
       <div>
         <div
-          class="w-[30px] h-[30px] flex items-center justify-center rounded-full bg-gray-300"
+          class="w-[30px] h-[30px] flex items-center justify-center bg-gray-300"
         >
-          <span class="text-xs">CRS</span>
+          <img
+            class="w-full h-full object-cover rounded-full"
+            src={profile}
+            alt={name}
+          />
         </div>
       </div>
     {/if}
@@ -28,8 +33,11 @@
         </div>
       {/if}
       <div class="{cn(chatBubbleVariants({ box: role }))} p-2 rounded-md">
-        <div class="text-base">{content}</div>
+        <div class="text-sm">{content}</div>
       </div>
+      {#if images.length > 0}
+        <ChatBubbleImage {images} />
+      {/if}
     </div>
   </div>
 </div>

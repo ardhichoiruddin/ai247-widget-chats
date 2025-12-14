@@ -8,6 +8,7 @@
   const chatsData = $state.raw<ChatBubbleType[]>([
     {
       id: "user_1032322225",
+      profile: "https://cdn.shopify.com/static/sample-images/garnished.jpeg",
       name: "Bambang Suryadi",
       role: "customer",
       content: "p",
@@ -16,6 +17,7 @@
     },
     {
       id: "user_1032325",
+      profile: "https://cdn.shopify.com/static/sample-images/garnished.jpeg",
       name: "Bambang Suryadi",
       role: "customer",
       content: "Terima kasih! Saya akan coba sekarang.",
@@ -24,14 +26,16 @@
     },
     {
       id: 10,
+      profile: "https://cdn.shopify.com/static/sample-images/garnished.jpeg",
       name: "Support Bot",
       role: "bot",
       content: "Ya! Gunakan kode: DISKON15 untuk diskon 15%.",
       date: "2025-12-14T08:20:30Z",
-      images: ["https://example.com/images/promo_banner.jpg"],
+      images: ["https://cdn.shopify.com/static/sample-images/garnished.jpeg"],
     },
     {
       id: "user_13205",
+      profile: "https://cdn.shopify.com/static/sample-images/garnished.jpeg",
       name: "Bambang Suryadi",
       role: "customer",
       content: "Apakah ada promo hari ini?",
@@ -40,6 +44,7 @@
     },
     {
       id: 9,
+      profile: "https://cdn.shopify.com/static/sample-images/garnished.jpeg",
       name: "Support Bot",
       role: "bot",
       content: "Alamat berhasil diperbarui. Terima kasih!",
@@ -48,6 +53,7 @@
     },
     {
       id: "user_10224",
+      profile: "https://cdn.shopify.com/static/sample-images/garnished.jpeg",
       name: "Dewi Lestari",
       role: "customer",
       content: "Pesanan: #ORD-77654. Alamat baru: Jl. Merdeka No. 10, Jakarta.",
@@ -56,6 +62,7 @@
     },
     {
       id: 8,
+      profile: "https://cdn.shopify.com/static/sample-images/garnished.jpeg",
       name: "Support Bot",
       role: "bot",
       content: "Silakan kirim alamat baru dan nomor pesanan.",
@@ -64,6 +71,7 @@
     },
     {
       id: "user_103334",
+      profile: "https://cdn.shopify.com/static/sample-images/garnished.jpeg",
       name: "Dewi Lestari",
       role: "customer",
       content: "Saya ingin mengganti alamat pengiriman.",
@@ -72,6 +80,7 @@
     },
     {
       id: 7,
+      profile: "https://cdn.shopify.com/static/sample-images/garnished.jpeg",
       name: "Support Bot",
       role: "bot",
       content: "Kami telah menghubungi kurir. Mohon tunggu update berikutnya.",
@@ -80,14 +89,16 @@
     },
     {
       id: "user_103232",
+      profile: "https://cdn.shopify.com/static/sample-images/garnished.jpeg",
       name: "Rudi Hermawan",
       role: "customer",
       content: "Resinya: JNE123456789ID.",
       date: "2025-12-14T08:11:15Z",
-      images: ["https://example.com/images/resi_scan.png"],
+      images: ["https://cdn.shopify.com/static/sample-images/garnished.jpeg"],
     },
     {
       id: 6,
+      profile: "https://cdn.shopify.com/static/sample-images/garnished.jpeg",
       name: "Support Bot",
       role: "bot",
       content: "Kami mohon maaf. Mohon berikan nomor resi.",
@@ -96,6 +107,7 @@
     },
     {
       id: "user_103",
+      profile: "https://cdn.shopify.com/static/sample-images/garnished.jpeg",
       name: "Rudi Hermawan",
       role: "customer",
       content: "Barang saya belum sampai, padahal estimasi kemarin.",
@@ -104,6 +116,7 @@
     },
     {
       id: 5,
+      profile: "https://cdn.shopify.com/static/sample-images/garnished.jpeg",
       name: "Support Bot",
       role: "bot",
       content: "Terima kasih. Permintaan percepatan telah diajukan.",
@@ -112,14 +125,16 @@
     },
     {
       id: "user_10211",
+      profile: "https://cdn.shopify.com/static/sample-images/garnished.jpeg",
       name: "Siti Nurhaliza",
       role: "customer",
       content: "Ini bukti pembayarannya.",
       date: "2025-12-14T08:06:20Z",
-      images: ["https://example.com/images/payment_proof.jpg"],
+      images: ["https://cdn.shopify.com/static/sample-images/garnished.jpeg"],
     },
     {
       id: 4,
+      profile: "https://cdn.shopify.com/static/sample-images/garnished.jpeg",
       name: "Support Bot",
       role: "bot",
       content: "Kami akan coba bantu. Mohon kirim bukti pembayaran.",
@@ -128,14 +143,16 @@
     },
     {
       id: "user_102",
+      profile: "https://cdn.shopify.com/static/sample-images/garnished.jpeg",
       name: "Siti Nurhaliza",
       role: "customer",
       content: "Apakah pengiriman bisa dipercepat?",
       date: "2025-12-14T08:05:12Z",
-      images: ["https://example.com/images/urgent_note.png"],
+      images: ["https://cdn.shopify.com/static/sample-images/garnished.jpeg"],
     },
     {
       id: 3,
+      profile: "https://cdn.shopify.com/static/sample-images/garnished.jpeg",
       name: "Support Bot",
       role: "bot",
       content: "Terima kasih. Kami sedang mengecek status pesanan Anda.",
@@ -144,6 +161,7 @@
     },
     {
       id: "user_1023",
+      profile: "https://cdn.shopify.com/static/sample-images/garnished.jpeg",
       name: "Andi Wijaya",
       role: "customer",
       content: "Nomor pesanannya: #ORD-88921.",
@@ -152,6 +170,7 @@
     },
     {
       id: 2,
+      profile: "https://cdn.shopify.com/static/sample-images/garnished.jpeg",
       name: "Support Bot",
       role: "bot",
       content:
@@ -161,14 +180,19 @@
     },
     {
       id: "user_101",
+      profile: "https://cdn.shopify.com/static/sample-images/garnished.jpeg",
       name: "Andi Wijaya",
       role: "customer",
       content: "Hai, saya punya masalah dengan pesanan saya.",
       date: "2025-12-14T08:01:10Z",
-      images: ["https://example.com/images/order_issue.jpg"],
+      images: [
+        "https://cdn.shopify.com/static/sample-images/garnished.jpeg",
+        "https://cdn.shopify.com/static/sample-images/garnished.jpeg",
+      ],
     },
     {
       id: 1,
+      profile: "https://cdn.shopify.com/static/sample-images/garnished.jpeg",
       name: "Support Bot",
       role: "bot",
       content: "Halo! Selamat datang di layanan pelanggan kami.",

@@ -15,7 +15,7 @@
       <Tabs.List class="gap-4 bg-transparent">
         {#each tabActions as tac (tac.value)}
           <Tabs.Trigger
-            class="text-white  bg-transparent data-[state=active]:bg-blue-300/40 shadow-none"
+            class="text-white  bg-transparent data-[state=active]:bg-blue-300/40 shadow-none font-medium"
             value={tac.value}
           >
             <span class={tac.icon}></span>
