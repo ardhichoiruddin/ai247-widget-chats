@@ -9,7 +9,7 @@
   let { value = $bindable(), tabActions = [] }: Props = $props();
 </script>
 
-<Tabs.Root bind:value class="w-full">
+<Tabs.Root bind:value class="w-full h-full gap-0">
   <div class="min-h-[40px] bg-blue-600 rounded-t-[14px] py-2.5 px-2">
     <div class="w-full flex items-start justify-center">
       <Tabs.List class="gap-4 bg-transparent">
@@ -30,8 +30,8 @@
   </div>
   {#each tabActions as tac (tac.value)}
     {@const Component = tac.component}
-    <Tabs.Content value={tac.value} class="h-[200px]">
-      <div class="p-2">
+    <Tabs.Content value={tac.value} class="min-h-0">
+      <div class="px-2 h-full">
         <Component />
       </div>
     </Tabs.Content>

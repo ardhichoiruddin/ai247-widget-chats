@@ -1,6 +1,7 @@
 <script lang="ts">
   import ChatBubble from "./chatBubble.svelte";
   import ChatContainer from "./chatContainer.svelte";
+  import ChatEditor from "./chatEditor.svelte";
   import type { ChatBubble as ChatBubbleType } from "./types";
 
   const chatsData = $state.raw<ChatBubbleType[]>([
@@ -176,7 +177,7 @@
   ]);
 </script>
 
-<div class="flex flex-col">
+<div class="flex flex-col h-full">
   <div class="flex-1 min-h-0">
     <ChatContainer>
       {#each chatsData as item (item.id)}
@@ -184,5 +185,7 @@
       {/each}
     </ChatContainer>
   </div>
-  <div>Editor</div>
+  <div>
+    <ChatEditor />
+  </div>
 </div>
