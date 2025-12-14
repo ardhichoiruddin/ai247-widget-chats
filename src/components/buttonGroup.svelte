@@ -58,7 +58,7 @@
     () => (isOpen = false)
   );
 
-  $effect(() => {
+  $effect.pre(() => {
     if (isOpen) {
       updatePosition();
     }

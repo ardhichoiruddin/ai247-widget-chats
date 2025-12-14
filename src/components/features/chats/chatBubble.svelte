@@ -4,7 +4,18 @@
   import { chatBubbleVariants } from "./tv";
   import type { ChatBubble } from "./types";
 
-  let { id, name, role, content, images, date, profile }: ChatBubble = $props();
+  let {
+    id,
+    name,
+    role,
+    content,
+    images,
+    date,
+    profile,
+    onImagePreview,
+  }: ChatBubble & {
+    onImagePreview?: (url: string) => void;
+  } = $props();
 </script>
 
 <div class="w-full">
@@ -36,7 +47,7 @@
         <div class="text-sm">{content}</div>
       </div>
       {#if images.length > 0}
-        <ChatBubbleImage {images} />
+        <ChatBubbleImage {images} {onImagePreview} />
       {/if}
     </div>
   </div>

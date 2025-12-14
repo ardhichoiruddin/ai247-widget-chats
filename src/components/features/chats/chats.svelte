@@ -1,212 +1,25 @@
 <script lang="ts">
+  import { getContext } from "svelte";
+  import type { Writable } from "svelte/store";
   import ChatBubble from "./chatBubble.svelte";
   import ChatComposer from "./chatComposer.svelte";
   import ChatContainer from "./chatContainer.svelte";
   import ChatEditor from "./chatEditor.svelte";
   import type { ChatBubble as ChatBubbleType } from "./types";
 
-  const chatsData = $state.raw<ChatBubbleType[]>([
-    {
-      id: "user_1032322225",
-      profile: "https://cdn.shopify.com/static/sample-images/garnished.jpeg",
-      name: "Bambang Suryadi",
-      role: "customer",
-      content: "p",
-      date: "2025-12-14T08:21:10Z",
-      images: [],
-    },
-    {
-      id: "user_1032325",
-      profile: "https://cdn.shopify.com/static/sample-images/garnished.jpeg",
-      name: "Bambang Suryadi",
-      role: "customer",
-      content: "Terima kasih! Saya akan coba sekarang.",
-      date: "2025-12-14T08:21:10Z",
-      images: [],
-    },
-    {
-      id: 10,
-      profile: "https://cdn.shopify.com/static/sample-images/garnished.jpeg",
-      name: "Support Bot",
-      role: "bot",
-      content: "Ya! Gunakan kode: DISKON15 untuk diskon 15%.",
-      date: "2025-12-14T08:20:30Z",
-      images: ["https://cdn.shopify.com/static/sample-images/garnished.jpeg"],
-    },
-    {
-      id: "user_13205",
-      profile: "https://cdn.shopify.com/static/sample-images/garnished.jpeg",
-      name: "Bambang Suryadi",
-      role: "customer",
-      content: "Apakah ada promo hari ini?",
-      date: "2025-12-14T08:20:00Z",
-      images: [],
-    },
-    {
-      id: 9,
-      profile: "https://cdn.shopify.com/static/sample-images/garnished.jpeg",
-      name: "Support Bot",
-      role: "bot",
-      content: "Alamat berhasil diperbarui. Terima kasih!",
-      date: "2025-12-14T08:17:00Z",
-      images: [],
-    },
-    {
-      id: "user_10224",
-      profile: "https://cdn.shopify.com/static/sample-images/garnished.jpeg",
-      name: "Dewi Lestari",
-      role: "customer",
-      content: "Pesanan: #ORD-77654. Alamat baru: Jl. Merdeka No. 10, Jakarta.",
-      date: "2025-12-14T08:16:20Z",
-      images: [],
-    },
-    {
-      id: 8,
-      profile: "https://cdn.shopify.com/static/sample-images/garnished.jpeg",
-      name: "Support Bot",
-      role: "bot",
-      content: "Silakan kirim alamat baru dan nomor pesanan.",
-      date: "2025-12-14T08:15:40Z",
-      images: [],
-    },
-    {
-      id: "user_103334",
-      profile: "https://cdn.shopify.com/static/sample-images/garnished.jpeg",
-      name: "Dewi Lestari",
-      role: "customer",
-      content: "Saya ingin mengganti alamat pengiriman.",
-      date: "2025-12-14T08:15:10Z",
-      images: [],
-    },
-    {
-      id: 7,
-      profile: "https://cdn.shopify.com/static/sample-images/garnished.jpeg",
-      name: "Support Bot",
-      role: "bot",
-      content: "Kami telah menghubungi kurir. Mohon tunggu update berikutnya.",
-      date: "2025-12-14T08:12:00Z",
-      images: [],
-    },
-    {
-      id: "user_103232",
-      profile: "https://cdn.shopify.com/static/sample-images/garnished.jpeg",
-      name: "Rudi Hermawan",
-      role: "customer",
-      content: "Resinya: JNE123456789ID.",
-      date: "2025-12-14T08:11:15Z",
-      images: ["https://cdn.shopify.com/static/sample-images/garnished.jpeg"],
-    },
-    {
-      id: 6,
-      profile: "https://cdn.shopify.com/static/sample-images/garnished.jpeg",
-      name: "Support Bot",
-      role: "bot",
-      content: "Kami mohon maaf. Mohon berikan nomor resi.",
-      date: "2025-12-14T08:10:30Z",
-      images: [],
-    },
-    {
-      id: "user_103",
-      profile: "https://cdn.shopify.com/static/sample-images/garnished.jpeg",
-      name: "Rudi Hermawan",
-      role: "customer",
-      content: "Barang saya belum sampai, padahal estimasi kemarin.",
-      date: "2025-12-14T08:10:05Z",
-      images: [],
-    },
-    {
-      id: 5,
-      profile: "https://cdn.shopify.com/static/sample-images/garnished.jpeg",
-      name: "Support Bot",
-      role: "bot",
-      content: "Terima kasih. Permintaan percepatan telah diajukan.",
-      date: "2025-12-14T08:07:00Z",
-      images: [],
-    },
-    {
-      id: "user_10211",
-      profile: "https://cdn.shopify.com/static/sample-images/garnished.jpeg",
-      name: "Siti Nurhaliza",
-      role: "customer",
-      content: "Ini bukti pembayarannya.",
-      date: "2025-12-14T08:06:20Z",
-      images: ["https://cdn.shopify.com/static/sample-images/garnished.jpeg"],
-    },
-    {
-      id: 4,
-      profile: "https://cdn.shopify.com/static/sample-images/garnished.jpeg",
-      name: "Support Bot",
-      role: "bot",
-      content: "Kami akan coba bantu. Mohon kirim bukti pembayaran.",
-      date: "2025-12-14T08:05:45Z",
-      images: [],
-    },
-    {
-      id: "user_102",
-      profile: "https://cdn.shopify.com/static/sample-images/garnished.jpeg",
-      name: "Siti Nurhaliza",
-      role: "customer",
-      content: "Apakah pengiriman bisa dipercepat?",
-      date: "2025-12-14T08:05:12Z",
-      images: ["https://cdn.shopify.com/static/sample-images/garnished.jpeg"],
-    },
-    {
-      id: 3,
-      profile: "https://cdn.shopify.com/static/sample-images/garnished.jpeg",
-      name: "Support Bot",
-      role: "bot",
-      content: "Terima kasih. Kami sedang mengecek status pesanan Anda.",
-      date: "2025-12-14T08:03:00Z",
-      images: [],
-    },
-    {
-      id: "user_1023",
-      profile: "https://cdn.shopify.com/static/sample-images/garnished.jpeg",
-      name: "Andi Wijaya",
-      role: "customer",
-      content: "Nomor pesanannya: #ORD-88921.",
-      date: "2025-12-14T08:02:30Z",
-      images: [],
-    },
-    {
-      id: 2,
-      profile: "https://cdn.shopify.com/static/sample-images/garnished.jpeg",
-      name: "Support Bot",
-      role: "bot",
-      content:
-        "Mohon maaf atas ketidaknyamanannya. Bisa berikan nomor pesanan?",
-      date: "2025-12-14T08:01:45Z",
-      images: [],
-    },
-    {
-      id: "user_101",
-      profile: "https://cdn.shopify.com/static/sample-images/garnished.jpeg",
-      name: "Andi Wijaya",
-      role: "customer",
-      content: "Hai, saya punya masalah dengan pesanan saya.",
-      date: "2025-12-14T08:01:10Z",
-      images: [
-        "https://cdn.shopify.com/static/sample-images/garnished.jpeg",
-        "https://cdn.shopify.com/static/sample-images/garnished.jpeg",
-      ],
-    },
-    {
-      id: 1,
-      profile: "https://cdn.shopify.com/static/sample-images/garnished.jpeg",
-      name: "Support Bot",
-      role: "bot",
-      content: "Halo! Selamat datang di layanan pelanggan kami.",
-      date: "2025-12-14T08:00:00Z",
-      images: [],
-    },
-  ]);
+  const messages = getContext<Writable<ChatBubbleType[]>>("messages");
+  const onPreviewImage = getContext<Writable<string>>("onPreviewImage");
+
+  function onImagePreview(imageUrl: string) {
+    onPreviewImage.set(imageUrl);
+  }
 </script>
 
 <div class="flex flex-col h-full">
   <div class="flex-1 min-h-0">
     <ChatContainer>
-      {#each chatsData as item (item.id)}
-        <ChatBubble {...item} />
+      {#each $messages as item (item.id)}
+        <ChatBubble {...item} {onImagePreview} />
       {/each}
     </ChatContainer>
   </div>
