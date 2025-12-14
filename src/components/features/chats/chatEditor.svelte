@@ -1,5 +1,6 @@
 <script lang="ts">
   let textareaValue = $state("");
+
   function autoResize(e: Event) {
     const target = e.target as HTMLTextAreaElement;
     target.style.height = "auto";

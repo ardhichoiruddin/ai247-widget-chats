@@ -1,5 +1,6 @@
 <script lang="ts">
   import ChatBubble from "./chatBubble.svelte";
+  import ChatComposer from "./chatComposer.svelte";
   import ChatContainer from "./chatContainer.svelte";
   import ChatEditor from "./chatEditor.svelte";
   import type { ChatBubble as ChatBubbleType } from "./types";
@@ -187,5 +188,6 @@
   </div>
   <div>
     <ChatEditor />
+    <ChatComposer />
   </div>
 </div>
