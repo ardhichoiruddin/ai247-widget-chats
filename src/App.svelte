@@ -2,6 +2,7 @@
   import Container from "./components/container.svelte";
   import Chats from "./components/features/chats/chats.svelte";
   import Help from "./components/features/help/help.svelte";
+  import Search from "./components/features/search/search.svelte";
   import TabsHeader from "./components/tabsHeader.svelte";
   import type { TabOption } from "./components/types";
 
@@ -24,7 +25,7 @@
       value: "search",
       label: "Search",
       icon: "icon-search",
-      component: Chats,
+      component: Search,
     },
   ]);
 </script>

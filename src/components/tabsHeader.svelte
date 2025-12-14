@@ -10,7 +10,7 @@
 </script>
 
 <Tabs.Root bind:value class="w-full">
-  <div class="min-h-[40px] bg-blue-600 rounded-t-[10px] py-2.5 px-2">
+  <div class="min-h-[40px] bg-blue-600 rounded-t-[14px] py-2.5 px-2">
     <div class="w-full flex items-start justify-center">
       <Tabs.List class="gap-4 bg-transparent">
         {#each tabActions as tac (tac.value)}
@@ -30,7 +30,7 @@
   </div>
   {#each tabActions as tac (tac.value)}
     {@const Component = tac.component}
-    <Tabs.Content value={tac.value}>
+    <Tabs.Content value={tac.value} class="h-[200px]">
       <div class="p-2">
         <Component />
       </div>

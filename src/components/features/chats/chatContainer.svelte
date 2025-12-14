@@ -2,8 +2,6 @@
   let { children } = $props();
 </script>
 
-<div
-  class="relative w-[410px] bg-white shadow-2xl h-[680px] rounded-[14px] bg-white"
->
+<div class="flex flex-col-reverse w-full gap-4 h-[500px] overflow-x-auto">
   {@render children()}
 </div>

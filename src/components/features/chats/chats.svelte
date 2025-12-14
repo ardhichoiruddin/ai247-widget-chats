@@ -1,3 +1,188 @@
-<script lang="ts"></script>
+<script lang="ts">
+  import ChatBubble from "./chatBubble.svelte";
+  import ChatContainer from "./chatContainer.svelte";
+  import type { ChatBubble as ChatBubbleType } from "./types";
 
-Hello Chats
+  const chatsData = $state.raw<ChatBubbleType[]>([
+    {
+      id: "user_1032322225",
+      name: "Bambang Suryadi",
+      role: "customer",
+      content: "p",
+      date: "2025-12-14T08:21:10Z",
+      images: [],
+    },
+    {
+      id: "user_1032325",
+      name: "Bambang Suryadi",
+      role: "customer",
+      content: "Terima kasih! Saya akan coba sekarang.",
+      date: "2025-12-14T08:21:10Z",
+      images: [],
+    },
+    {
+      id: 10,
+      name: "Support Bot",
+      role: "bot",
+      content: "Ya! Gunakan kode: DISKON15 untuk diskon 15%.",
+      date: "2025-12-14T08:20:30Z",
+      images: ["https://example.com/images/promo_banner.jpg"],
+    },
+    {
+      id: "user_13205",
+      name: "Bambang Suryadi",
+      role: "customer",
+      content: "Apakah ada promo hari ini?",
+      date: "2025-12-14T08:20:00Z",
+      images: [],
+    },
+    {
+      id: 9,
+      name: "Support Bot",
+      role: "bot",
+      content: "Alamat berhasil diperbarui. Terima kasih!",
+      date: "2025-12-14T08:17:00Z",
+      images: [],
+    },
+    {
+      id: "user_10224",
+      name: "Dewi Lestari",
+      role: "customer",
+      content: "Pesanan: #ORD-77654. Alamat baru: Jl. Merdeka No. 10, Jakarta.",
+      date: "2025-12-14T08:16:20Z",
+      images: [],
+    },
+    {
+      id: 8,
+      name: "Support Bot",
+      role: "bot",
+      content: "Silakan kirim alamat baru dan nomor pesanan.",
+      date: "2025-12-14T08:15:40Z",
+      images: [],
+    },
+    {
+      id: "user_103334",
+      name: "Dewi Lestari",
+      role: "customer",
+      content: "Saya ingin mengganti alamat pengiriman.",
+      date: "2025-12-14T08:15:10Z",
+      images: [],
+    },
+    {
+      id: 7,
+      name: "Support Bot",
+      role: "bot",
+      content: "Kami telah menghubungi kurir. Mohon tunggu update berikutnya.",
+      date: "2025-12-14T08:12:00Z",
+      images: [],
+    },
+    {
+      id: "user_103232",
+      name: "Rudi Hermawan",
+      role: "customer",
+      content: "Resinya: JNE123456789ID.",
+      date: "2025-12-14T08:11:15Z",
+      images: ["https://example.com/images/resi_scan.png"],
+    },
+    {
+      id: 6,
+      name: "Support Bot",
+      role: "bot",
+      content: "Kami mohon maaf. Mohon berikan nomor resi.",
+      date: "2025-12-14T08:10:30Z",
+      images: [],
+    },
+    {
+      id: "user_103",
+      name: "Rudi Hermawan",
+      role: "customer",
+      content: "Barang saya belum sampai, padahal estimasi kemarin.",
+      date: "2025-12-14T08:10:05Z",
+      images: [],
+    },
+    {
+      id: 5,
+      name: "Support Bot",
+      role: "bot",
+      content: "Terima kasih. Permintaan percepatan telah diajukan.",
+      date: "2025-12-14T08:07:00Z",
+      images: [],
+    },
+    {
+      id: "user_10211",
+      name: "Siti Nurhaliza",
+      role: "customer",
+      content: "Ini bukti pembayarannya.",
+      date: "2025-12-14T08:06:20Z",
+      images: ["https://example.com/images/payment_proof.jpg"],
+    },
+    {
+      id: 4,
+      name: "Support Bot",
+      role: "bot",
+      content: "Kami akan coba bantu. Mohon kirim bukti pembayaran.",
+      date: "2025-12-14T08:05:45Z",
+      images: [],
+    },
+    {
+      id: "user_102",
+      name: "Siti Nurhaliza",
+      role: "customer",
+      content: "Apakah pengiriman bisa dipercepat?",
+      date: "2025-12-14T08:05:12Z",
+      images: ["https://example.com/images/urgent_note.png"],
+    },
+    {
+      id: 3,
+      name: "Support Bot",
+      role: "bot",
+      content: "Terima kasih. Kami sedang mengecek status pesanan Anda.",
+      date: "2025-12-14T08:03:00Z",
+      images: [],
+    },
+    {
+      id: "user_1023",
+      name: "Andi Wijaya",
+      role: "customer",
+      content: "Nomor pesanannya: #ORD-88921.",
+      date: "2025-12-14T08:02:30Z",
+      images: [],
+    },
+    {
+      id: 2,
+      name: "Support Bot",
+      role: "bot",
+      content:
+        "Mohon maaf atas ketidaknyamanannya. Bisa berikan nomor pesanan?",
+      date: "2025-12-14T08:01:45Z",
+      images: [],
+    },
+    {
+      id: "user_101",
+      name: "Andi Wijaya",
+      role: "customer",
+      content: "Hai, saya punya masalah dengan pesanan saya.",
+      date: "2025-12-14T08:01:10Z",
+      images: ["https://example.com/images/order_issue.jpg"],
+    },
+    {
+      id: 1,
+      name: "Support Bot",
+      role: "bot",
+      content: "Halo! Selamat datang di layanan pelanggan kami.",
+      date: "2025-12-14T08:00:00Z",
+      images: [],
+    },
+  ]);
+</script>
+
+<div class="flex flex-col">
+  <div class="flex-1 min-h-0">
+    <ChatContainer>
+      {#each chatsData as item (item.id)}
+        <ChatBubble {...item} />
+      {/each}
+    </ChatContainer>
+  </div>
+  <div>Editor</div>
+</div>
