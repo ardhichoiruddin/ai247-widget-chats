@@ -7,8 +7,8 @@ export const chatBubbleVariants = tv({
       customer: "ml-auto justify-end",
     },
     box: {
-      bot: "bg-blue-600 text-white",
-      customer: "bg-gray-300 text-gray-700",
+      bot: "bg-blue-600 text-white rounded-b-[10px] rounded-tr-[10px]",
+      customer: "bg-gray-300 text-gray-700 rounded-t-[10px] rounded-bl-[10px]",
     },
   },
 });

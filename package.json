@@ -28,6 +28,7 @@
   "dependencies": {
     "@floating-ui/dom": "^1.7.4",
     "@tailwindcss/vite": "^4.1.18",
+    "axios": "^1.13.2",
     "runed": "^0.37.0",
     "tailwindcss": "^4.1.18"
   }

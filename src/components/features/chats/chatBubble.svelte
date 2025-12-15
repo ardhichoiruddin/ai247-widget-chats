@@ -43,7 +43,7 @@
           <span class="text-sm">{name}</span>
         </div>
       {/if}
-      <div class="{cn(chatBubbleVariants({ box: role }))} p-2 rounded-md">
+      <div class="{cn(chatBubbleVariants({ box: role }))} p-2.5">
         <div class="text-sm">{content}</div>
       </div>
       {#if images.length > 0}
