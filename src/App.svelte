@@ -5,28 +5,31 @@
   import Chats from "./components/features/chats/chats.svelte";
   import type { ChatBubble as Message } from "./components/features/chats/types";
   import Help from "./components/features/help/help.svelte";
+  import type { HelpDataType } from "./components/features/help/types";
   import Search from "./components/features/search/search.svelte";
   import PreviewImage from "./components/previewImage.svelte";
   import TabsHeader from "./components/tabsHeader.svelte";
   import type { TabOption } from "./components/types";
+  import helpData from "./help.json";
   import messageData from "./messages.json";
 
   let tabValue = $state("chats");
 
-  const messages = writable<Message[]>([]);
+  const chatMessages = writable<Message[]>([]);
+  const helpLists = writable<HelpDataType[]>([]);
   const onPreviewImage = writable<string | null>(null);
 
   const tabActions = $state.raw<TabOption[]>([
     {
       value: "chats",
       label: "Chats",
-      icon: "icon-chat-dots",
+      icon: "icon-chat-dots-fill",
       component: Chats,
     },
     {
       value: "help",
       label: "Help",
-      icon: "icon-info-circle",
+      icon: "icon-book-fill",
       component: Help,
     },
     {
@@ -37,27 +40,20 @@
     },
   ]);
 
-  setContext("messages", messages);
+  setContext("chatMessages", chatMessages);
+  setContext("helpLists", helpLists);
   setContext("onPreviewImage", onPreviewImage);
 
   onMount(() => {
-    messages.set(messageData as Message[]);
+    chatMessages.set(messageData as Message[]);
+    helpLists.set(helpData);
   });
 </script>
 
-<div class="ai247-chat-widget-wrapper">
+<div class="fixed bottom-[20px] right-[20px] z-[1000]">
   <Container>
     <TabsHeader {tabActions} bind:value={tabValue} />
   </Container>
 
   <PreviewImage bind:imageUrl={$onPreviewImage} />
 </div>
-
-<style>
-  .ai247-chat-widget-wrapper {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 1000;
-  }
-</style>

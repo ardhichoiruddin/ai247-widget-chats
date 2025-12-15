@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?gtcdev');
-  src:  url('fonts/icomoon.eot?gtcdev#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?gtcdev') format('truetype'),
-    url('fonts/icomoon.woff?gtcdev') format('woff'),
-    url('fonts/icomoon.svg?gtcdev#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?zej7v6');
+  src:  url('fonts/icomoon.eot?zej7v6#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?zej7v6') format('truetype'),
+    url('fonts/icomoon.woff?zej7v6') format('woff'),
+    url('fonts/icomoon.svg?zej7v6#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,6 +25,24 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-chat-dots-fill:before {
+  content: "\e90b";
+}
+.icon-book-fill:before {
+  content: "\e90c";
+}
+.icon-chevron-up:before {
+  content: "\e907";
+}
+.icon-chevron-down:before {
+  content: "\e908";
+}
+.icon-chevron-left:before {
+  content: "\e909";
+}
+.icon-chevron-right:before {
+  content: "\e90a";
+}
 .icon-send:before {
   content: "\e906";
 }

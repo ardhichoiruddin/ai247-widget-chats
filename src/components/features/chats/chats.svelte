@@ -7,7 +7,7 @@
   import ChatEditor from "./chatEditor.svelte";
   import type { ChatBubble as ChatBubbleType } from "./types";
 
-  const messages = getContext<Writable<ChatBubbleType[]>>("messages");
+  const chatMessages = getContext<Writable<ChatBubbleType[]>>("chatMessages");
   const onPreviewImage = getContext<Writable<string>>("onPreviewImage");
 
   function onImagePreview(imageUrl: string) {
@@ -18,12 +18,12 @@
 <div class="flex flex-col h-full">
   <div class="flex-1 min-h-0">
     <ChatContainer>
-      {#each $messages as item (item.id)}
+      {#each $chatMessages as item (item.id)}
         <ChatBubble {...item} {onImagePreview} />
       {/each}
     </ChatContainer>
   </div>
-  <div>
+  <div class="px-2">
     <ChatEditor />
     <ChatComposer />
   </div>

@@ -31,7 +31,7 @@
   {#each tabActions as tac (tac.value)}
     {@const Component = tac.component}
     <Tabs.Content value={tac.value} class="min-h-0">
-      <div class="px-2 h-full">
+      <div class="h-full">
         <Component />
       </div>
     </Tabs.Content>
