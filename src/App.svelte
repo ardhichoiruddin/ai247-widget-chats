@@ -5,7 +5,10 @@
   import Chats from "./components/features/chats/chats.svelte";
   import type { ChatBubble as Message } from "./components/features/chats/types";
   import Help from "./components/features/help/help.svelte";
-  import type { HelpDataType } from "./components/features/help/types";
+  import type {
+    HelpDataType,
+    HelpDetailType,
+  } from "./components/features/help/types";
   import Search from "./components/features/search/search.svelte";
   import PreviewImage from "./components/previewImage.svelte";
   import TabsHeader from "./components/tabsHeader.svelte";
@@ -17,6 +20,7 @@
 
   const chatMessages = writable<Message[]>([]);
   const helpLists = writable<HelpDataType[]>([]);
+  const helpRoutes = writable<Record<string, HelpDetailType>>();
   const onPreviewImage = writable<string | null>(null);
 
   const tabActions = $state.raw<TabOption[]>([
@@ -42,11 +46,16 @@
 
   setContext("chatMessages", chatMessages);
   setContext("helpLists", helpLists);
+  setContext("helpRoutes", helpRoutes);
   setContext("onPreviewImage", onPreviewImage);
 
   onMount(() => {
     chatMessages.set(messageData as Message[]);
     helpLists.set(helpData);
+  });
+
+  $effect(() => {
+    console.log("helpRoutes", $helpRoutes);
   });
 </script>
 

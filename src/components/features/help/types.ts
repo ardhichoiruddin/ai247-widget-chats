@@ -3,3 +3,7 @@ export interface HelpDataType {
   title: string;
   sub_title: string;
 }
+
+export interface HelpDetailType extends HelpDataType {
+  content: string | null;
+}
